@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     borderRadius: 100, 
   },
 
-
   
   titleStyle:{
     color: 'white',
