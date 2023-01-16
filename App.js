@@ -9,155 +9,132 @@ import {
 } from "react-native";
 import React from "react";
 import { useFonts } from "expo-font";
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import cocktails from "./componentes/grid1/grid1.js";
+import Bebidas from "./componentes/grid2/grid2.js";
+// SVG //
+import Img1 from "./imagens/imagensSVG/img1.svg";
+import Inicio from "./imagens/imagensSVG/inicio.svg";
+import Overlay from "./imagens/imagensSVG/overlay.svg";
 
 // TELA 1 //
-function Home ({navigation}) {
+function Home({ navigation }) {
   const [loaded] = useFonts({
     EBGaramond: require("./assets/fonts/EBGaramond-Regular.ttf"),
   });
   if (!loaded) {
     return null;
   }
-  return(
+  return (
     <SafeAreaView style={styles.container}>
-    
-      <Image
+      {/* <Image
         source={require("./imagens/inicio.png")}
         style={{ width: "100%", height: "100%", top: "1%" }}
-      />
+      /> */}
+      <Img1 width={300} height={200} left="12%" top="7%"/>
+      <Inicio width= "100%" height= "100%" bottom="20%"/>
       <View style={styles.logoposition}>
-      <Image 
-        source={require("./imagens/logo.png")}
-      />
+        <Image source={require("./imagens/logo.png")} />
       </View>
       <Text style={styles.titleStyle}>
         O importante é ser feliz. O resto, a gente mistura com alguma coisa
         alcoólica!
       </Text>
-
-      <Image
+      <Overlay width={300} height={200} left="12%" bottom="60%"/>
+      {/* <Image
         source={require("./imagens/overlay.png")}
         style={styles.imageoverlay}
-      />
+      /> */}
 
       <View style={styles.buttonContainer1}>
-        <TouchableOpacity
-        onPress={() => navigation.navigate('Bebidas') }>
+        <TouchableOpacity onPress={() => navigation.navigate("Bebidas")}>
           <Text style={styles.buttonText1}>Bebidas</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.buttonContainer2}>
         <TouchableOpacity
-        onPress={()=>{
-          console.log('ola');
-        }}>
-        <Text style={styles.buttonText2}>cocktails</Text>
+          onPress={() => navigation.navigate("cocktails")}
+        >
+          <Text style={styles.buttonText2}>cocktails</Text>
         </TouchableOpacity>
       </View>
-
     </SafeAreaView>
-    
   );
 }
-////
-
-// TELA 2 //
-
-function Bebidas ({navigation}) {
-  const [loaded] = useFonts({
-    EBGaramond: require("./assets/fonts/EBGaramond-Regular.ttf"),
-  });
-  if (!loaded) {
-    return null;
-  } 
-return(
-  <SafeAreaView style={styles.container1}>
-     <View style={styles.rectangle}></View>
-     <View style={styles.logoposition}>
-      <Image 
-        source={require("./imagens/logo.png")}
-      />
-      </View>
-     <View style={styles.circle}>
-     <TouchableOpacity > 
-     <Text style={styles.textproduct}> R$</Text>
-     </TouchableOpacity>
-     </View>
-     <Text style={styles.textingredients}> Escolha os Igredientes.</Text>
-    <ScrollView horizontal={true}>
-
-
-
-    </ScrollView>
-
-
-  </SafeAreaView>
-);
-
-
-}
-
-
-
-
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  
   return (
-<NavigationContainer>
-  <Stack.Navigator initialRouteName="Home">
-    <Stack.Screen name="Home" options={{ headerShown: false }} component={Home}/>
-    <Stack.Screen name="Bebidas" options={{ headerShown: false }} component={Bebidas}/>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          options={{ headerShown: false }}
+          component={Home}
+        />
 
-  </Stack.Navigator>
-</NavigationContainer>
+        <Stack.Screen
+          name="cocktails"
+          options={{ headerShown: false }}
+          component={cocktails}
+        />
 
+        <Stack.Screen
+          name="Bebidas"
+          options={{ 
+            headerTitle: (props) => ( // App Logo
+            <Image
+              style={{ width: 150, height: 40, left:"100%" }}
+              source={require('./imagens/logo2.png')}
+              resizeMode='contain'
+            />
+          ),
+          }}
+          component={Bebidas}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  buttonContainer1:{
-    borderRadius:30,
-    width:"22%",
-    height:40,
-    backgroundColor:"black",
-    bottom:"42%",
-    marginHorizontal:'20%',
-    justifyContent:"center",
-    alignItems:"center",
-  
+export const styles = StyleSheet.create({
+  buttonContainer1: {
+    borderRadius: 30,
+    width: "22%",
+    height: 40,
+    backgroundColor: "black",
+    bottom: "76%",
+    marginHorizontal: "17%",
+    justifyContent: "center",
+    alignItems: "center",
   },
-  buttonText1:{
-    textTransform:"uppercase",
-    color:"#fff",
-    fontSize:12,
-  },
-
-  buttonContainer2:{
-    padding:5,
-    borderRadius:30,
-    width:90,
-    height:40,
-    backgroundColor:"black",
-    bottom:"46.8%",
-    marginHorizontal:'60%',
-    justifyContent:"center",
-    alignItems:"center",
-  },
-  buttonText2:{
-    textTransform:"uppercase",
-    color:"#fff",
-    fontSize:12,
+  buttonText1: {
+    textTransform: "uppercase",
+    color: "#fff",
+    fontSize: 12,
   },
 
-  container:{
+  buttonContainer2: {
+    padding: 5,
+    borderRadius: 30,
+    width: "22%",
+    height: 40,
+    backgroundColor: "black",
+    bottom: "81.5%",
+    marginHorizontal: "61%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText2: {
+    textTransform: "uppercase",
+    color: "#fff",
+    fontSize: 12,
+  },
+
+  container: {
     flex: 1,
     backgroundColor: "#219EBC",
   },
@@ -165,75 +142,83 @@ const styles = StyleSheet.create({
   titleStyle: {
     color: "white",
     fontFamily: "EBGaramond",
-    bottom: "65%",
+    bottom: "90%",
     padding: 15,
     fontSize: 20,
     textAlign: "center",
-  
   },
 
   imageoverlay: {
-    bottom: "32%",
+    bottom: "60%",
     alignItems: "center",
     justifyContent: "center",
     margin: "10%",
-    width: "66%",
-    left:"8%",
-    
+    width: "65%",
+    left: "8%",
   },
 
   logoposition: {
-    alignItems:"flex-start",
+    alignItems: "flex-start",
     justifyContent: "center",
-    margin:"5%",
-    position:"absolute",
-    
+    margin: "5%",
+    position: "absolute",
   },
 
-// TELA 2 // 
-  container1:{
+  // TELA 2 //
+  container1: {
     flex: 1,
     backgroundColor: "#D6E3E9",
   },
-  rectangle:{
-  position: "absolute",
-  width: "100%",
-  height: "50%",
-  backgroundColor: '#219EBC',
+  rectangle: {
+    position: "absolute",
+    width: "100%",
+    height: "50%",
+    backgroundColor: "#219EBC",
   },
 
-  circle:{
-  position:"absolute",
-  borderRadius:100,
-  width:"40%",
-  height:"20%",
-  left:0,
-  top:"40%",
-  backgroundColor:"#fff"
+  circle: {
+    position: "absolute",
+    borderRadius: 100,
+    width: "40%",
+    height: "20%",
+    left: 0,
+    top: "40%",
+    backgroundColor: "#fff",
   },
 
-  textproduct:{
-    position:"absolute",
-    marginTop:"60%",
-    textTransform:"uppercase",
-    left:"30%",
-    fontStyle:"normal", 
-    fontSize:20,
-
+  textproduct: {
+    position: "absolute",
+    marginTop: "60%",
+    textTransform: "uppercase",
+    left: "30%",
+    fontStyle: "normal",
+    fontSize: 20,
   },
 
-  textingredients:{
+  textingredients: {
     fontFamily: "EBGaramond",
-    position:"absolute",
-    top:"60%",
+    position: "absolute",
+    top: "60%",
     padding: 15,
     fontSize: 20,
     textAlign: "center",
-    lineHeight:20,
+    lineHeight: 20,
   },
-  imgingredients:{
-    height:"15%",
-    left:0,
-    marginLeft:10,
+  imgingredients: {
+    height: "15%",
+    left: 0,
+    marginLeft: 10,
   },
+
+
+
+
+// TELA 3 //
+logoposition2: {
+  position: "absolute",
+  top:"7%",
+  left:"5%",
+  
+  
+},
 });

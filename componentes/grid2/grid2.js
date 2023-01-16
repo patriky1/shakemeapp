@@ -1,4 +1,3 @@
-
 import {
     StyleSheet,
     Image,
@@ -20,19 +19,12 @@ const Bebidas = ({ navigation }) => {
   }
   return (
     <SafeAreaView style={styles.container1}>
-      <View style={styles.rectangle}></View>
-      <View style={styles.logoposition}>
-        <Image source={require("../../imagens/logo.png")} />
-      </View>
-      <View style={styles.circle}>
-        <TouchableOpacity>
-          <Text style={styles.textproduct}> R$</Text>
-        </TouchableOpacity>
-      </View>
+    <ScrollView vertical={true}>
+    
 
-      <Text style={styles.textingredients}> Escolha os Igredientes.</Text>
 
-      <ScrollView horizontal={true}></ScrollView>
+
+    </ScrollView>
     </SafeAreaView>
   );
 }
