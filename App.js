@@ -17,6 +17,8 @@ import Bebidas from "./componentes/grid2/grid2.js";
 import Img1 from "./imagens/imagensSVG/img1.svg";
 import Inicio from "./imagens/imagensSVG/inicio.svg";
 import Overlay from "./imagens/imagensSVG/overlay.svg";
+import LogoApp from "./componentes/grid2/imagens/logoapp.svg"
+
 
 // TELA 1 //
 function Home({ navigation }) {
@@ -28,10 +30,6 @@ function Home({ navigation }) {
   }
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Image
-        source={require("./imagens/inicio.png")}
-        style={{ width: "100%", height: "100%", top: "1%" }}
-      /> */}
       <Img1 width={300} height={200} left="12%" top="7%"/>
       <Inicio width= "100%" height= "100%" bottom="20%"/>
       <View style={styles.logoposition}>
@@ -41,11 +39,7 @@ function Home({ navigation }) {
         O importante é ser feliz. O resto, a gente mistura com alguma coisa
         alcoólica!
       </Text>
-      <Overlay width={300} height={200} left="12%" bottom="60%"/>
-      {/* <Image
-        source={require("./imagens/overlay.png")}
-        style={styles.imageoverlay}
-      /> */}
+      <Overlay width={300} height={200} left="14%" bottom="60%"/>
 
       <View style={styles.buttonContainer1}>
         <TouchableOpacity onPress={() => navigation.navigate("Bebidas")}>
@@ -55,11 +49,11 @@ function Home({ navigation }) {
 
       <View style={styles.buttonContainer2}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("cocktails")}
-        >
+          onPress={() => navigation.navigate("cocktails")}>
           <Text style={styles.buttonText2}>cocktails</Text>
         </TouchableOpacity>
       </View>
+
     </SafeAreaView>
   );
 }
@@ -86,11 +80,7 @@ export default function App() {
           name="Bebidas"
           options={{ 
             headerTitle: (props) => ( // App Logo
-            <Image
-              style={{ width: 150, height: 40, left:"100%" }}
-              source={require('./imagens/logo2.png')}
-              resizeMode='contain'
-            />
+            <LogoApp  marginHorizontal="20%"/>
           ),
           }}
           component={Bebidas}
@@ -102,12 +92,13 @@ export default function App() {
 
 export const styles = StyleSheet.create({
   buttonContainer1: {
+    position:"absolute",
     borderRadius: 30,
-    width: "22%",
+    width: "4%",
     height: 40,
     backgroundColor: "black",
-    bottom: "76%",
-    marginHorizontal: "17%",
+    bottom: "11.5%",
+    marginHorizontal: "16%",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -118,13 +109,13 @@ export const styles = StyleSheet.create({
   },
 
   buttonContainer2: {
-    padding: 5,
+    position:"absolute",
+    width: "25%",
     borderRadius: 30,
-    width: "22%",
     height: 40,
     backgroundColor: "black",
-    bottom: "81.5%",
-    marginHorizontal: "61%",
+    bottom: "11.5%",
+    left:"60%",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -132,6 +123,7 @@ export const styles = StyleSheet.create({
     textTransform: "uppercase",
     color: "#fff",
     fontSize: 12,
+  
   },
 
   container: {
@@ -164,7 +156,7 @@ export const styles = StyleSheet.create({
     position: "absolute",
   },
 
-  // TELA 2 //
+  // "TELA 2" //
   container1: {
     flex: 1,
     backgroundColor: "#D6E3E9",
@@ -214,11 +206,8 @@ export const styles = StyleSheet.create({
 
 
 // TELA 3 //
-logoposition2: {
-  position: "absolute",
-  top:"7%",
-  left:"5%",
-  
-  
+container2: {
+  flex: 1,
+  backgroundColor: "white",
 },
 });

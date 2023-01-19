@@ -9,6 +9,7 @@ import {
   } from "react-native";
 import { useFonts } from "expo-font";
 import { styles } from "../../App";
+import CardBebidas from "../cards/card.js";
 
 const Bebidas = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -18,8 +19,9 @@ const Bebidas = ({ navigation }) => {
     return null;
   }
   return (
-    <SafeAreaView style={styles.container1}>
+    <SafeAreaView style={styles.container2}>
     <ScrollView vertical={true}>
+      <CardBebidas/>
     
 
 
@@ -29,3 +31,4 @@ const Bebidas = ({ navigation }) => {
   );
 }
 export default Bebidas;
+
