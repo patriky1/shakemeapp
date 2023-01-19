@@ -1,6 +1,7 @@
 import React from 'react'; 
 import { SafeAreaView, View, ScrollView, StyleSheet } from 'react-native'; 
 import { Text, Card, Button, Icon } from 'react-native-elements';
+import { useFonts } from "expo-font";
 //SVG//
 import Vodka_absolut from "./cardimage/Vodka_absolut.svg";
 import Gin_rocks from "./cardimage/Gin_rocks.svg";
@@ -10,8 +11,14 @@ import Vodka_greygoose from "./cardimage/Vodka_greygoose.svg";
 import Run_montilla from "./cardimage/Run_montilla.svg";
 
 const CardBebidas = () => { 
+  const [loaded] = useFonts({
+    NerkoOne: require("../../assets/fonts/NerkoOne-Regular.ttf"),
+  });
+  if (!loaded) {
+    return null;
+  }
     return ( 
- 
+        <>
         <ScrollView > 
         <View style={styles.container1}>
           <View style={styles.container2}>
@@ -64,6 +71,7 @@ const CardBebidas = () => {
             </View>
         </View>
         </ScrollView> 
+        </>
 
     ); 
   };
