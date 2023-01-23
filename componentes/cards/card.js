@@ -28,7 +28,11 @@ const CardBebidas = () => {
   }
   return (
     <>
+      <SafeAreaView>
 
+          
+        
+      </SafeAreaView>
 
       <ScrollView>
         <View style={styles.container1}>

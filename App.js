@@ -13,6 +13,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import cocktails from "./componentes/grid1/grid1.js";
 import Bebidas from "./componentes/grid2/grid2.js";
+
+
+
 // SVG //
 import Img1 from "./imagens/imagensSVG/img1.svg";
 import Inicio from "./imagens/imagensSVG/inicio.svg";
@@ -31,7 +34,7 @@ function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Img1 width={300} height={200} left="12%" top="7%"/>
-      <Inicio width= "100%" height= "100%" bottom="20%"/>
+      <Inicio width= "100%" height= "100%" bottom="10%"/>
       <View style={styles.logoposition}>
         <Image source={require("./imagens/logo.png")} />
       </View>
@@ -90,6 +93,8 @@ export default function App() {
   );
 }
 
+
+
 export const styles = StyleSheet.create({
   buttonContainer1: {
     position:"absolute",
@@ -97,7 +102,7 @@ export const styles = StyleSheet.create({
     width: "4%",
     height: 40,
     backgroundColor: "black",
-    bottom: "10%",
+    bottom: "11.5%",
     marginHorizontal: "16%",
     justifyContent: "center",
     alignItems: "center",
@@ -114,7 +119,7 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
     height: 40,
     backgroundColor: "black",
-    bottom: "10%",
+    bottom: "11.5%",
     left:"60%",
     justifyContent: "center",
     alignItems: "center",
@@ -134,7 +139,7 @@ export const styles = StyleSheet.create({
   titleStyle: {
     color: "white",
     fontFamily: "EBGaramond",
-    bottom: "90%",
+    bottom: "85%",
     padding: 15,
     fontSize: 20,
     textAlign: "center",

@@ -11,7 +11,7 @@ import {
 import { useFonts } from "expo-font";
 import { styles } from "../../App";
 
-const Bebidas = ({ navigation }) => {
+const Drinks = ({ navigation }) => {
   const [loaded] = useFonts({
     EBGaramond: require("../../assets/fonts/EBGaramond-Regular.ttf"),
   });
@@ -36,4 +36,4 @@ const Bebidas = ({ navigation }) => {
     </SafeAreaView>
   );
 }
-export default Bebidas;
+export default Drinks;

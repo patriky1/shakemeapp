@@ -1,86 +1,56 @@
-import React from 'react';
-import {
-  StyleSheet,
-  View,
-  TouchableWithoutFeedback,
-  Text,
-  SafeAreaView,
-} from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Bebidas from '../grid1/grid1.js';
 
-const tabs = [{ name: 'My Account' }, { name: 'Company' }, { name: 'Team' }];
+const BtnGroup = () => {
 
+    const [selection, setSelection] = useState(1);
 
-export default function ButtonGroup() {
-  const [value, setValue] = React.useState(0);
-
-  return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-      <View style={styles.container}>
-        <View style={styles.container}>
-          {tabs.map((item, index) => {
-            const isActive = index === value;
-            const isFirst = index === 0;
-            const isNotFirst = index !== 0;
-            const isLast = index === tabs.length - 1;
-
-            return (
-              <View
-                style={{ flex: 1, zIndex: isActive ? 1 : 0 }}
-                key={item.name}>
-                <TouchableWithoutFeedback
-                  onPress={() => {
-                    setValue(index);
-                  }}>
-                  <View
-                    style={[
-                      styles.item,
-                      isActive && { borderColor: '#6366f1' },
-                      isFirst && {
-                        borderTopLeftRadius: 10,
-                        borderBottomLeftRadius: 10,
-                      },
-                      isNotFirst && { marginLeft: -2 },
-                      isLast && {
-                        borderTopRightRadius: 10,
-                        borderBottomRightRadius: 10,
-                      },
-                    ]}>
-                    <Text
-                      style={[styles.text, isActive && { color: '#6366f1' }]}>
-                      {item.name}
-                    </Text>
-                  </View>
-                </TouchableWithoutFeedback>
-              </View>
-            );
-          })}
-        </View>
-      </View>
-    </SafeAreaView>
-  );
+    return (
+        <SafeAreaView style={styles.container}>
+            <View style={styles.btnGroup}>
+                <TouchableOpacity style={[styles.btn, selection === 1 ? { backgroundColor: "#219EBC"} : null]} onPress={() => setSelection(1) }>
+                    <Text style={[styles.btnText, selection === 1 ? { color: "white" } : null]}>Todos</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.btn, selection === 2 ? { backgroundColor: "#219EBC" } : null]} onPress={() => setSelection(2)}>
+                    <Text style={[styles.btnText, selection === 2 ? { color: "white" } : null]}>Gin</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.btn, selection === 3 ? { backgroundColor: "#219EBC" } : null]} onPress={() => setSelection(3)}>
+                    <Text style={[styles.btnText, selection === 3 ? { color: "white" } : null]}>Vodka</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={[styles.btn, selection === 4 ? { backgroundColor: "#219EBC" } : null]} onPress={() => setSelection(4)}>
+                    <Text style={[styles.btnText, selection === 4 ? { color: "white" } : null]}>Agua Tônica</Text>
+                </TouchableOpacity>
+            </View>
+            
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 24,
-    paddingHorizontal: 12,
-    flexGrow: 1,
-    flexShrink: 1,
-    flexBasis: 0,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-  },
-  item: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 8,
-    borderColor: '#e5e7eb',
-    borderWidth: 2,
-    position: 'relative',
-  },
-  text: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: '#6b7280',
-  },
+    container: {
+        flex: 0,
+        top:"2%",
+    },
+    btnGroup: {
+        flexDirection: 'row',
+        alignItems: "center",
+        borderBottomWidth: 1,
+        borderBottomColor: 'white',
+        marginHorizontal:"2%",
+    },
+    btn: {
+        flex: 1,
+        borderRightWidth: 0.25,
+        borderLeftWidth: 0.25,
+        borderColor: 'white',
+        borderRadius: 10,       
+    },
+    btnText: {
+        textAlign: 'center',
+        paddingVertical: 16,
+        fontSize: 14
+    }
 });
+
+module.exports = BtnGroup;
