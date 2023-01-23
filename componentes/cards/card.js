@@ -28,27 +28,7 @@ const CardBebidas = () => {
   }
   return (
     <>
-      <SafeAreaView>
-        <View>
-          <Text style={styles.titleStyleBebidas}>TAKE A DRINK</Text>
-          <Text style={styles.text2}>Escolha sua bebida</Text>
-        </View>
-        
-   
-        <View style={styles.All} >
-          <TouchableOpacity  onPress={() => navigation.navigate(" ")}>
-            <Text style={styles.buttonText1}>Todos</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.Gin} >
-          <TouchableOpacity  onPress={() => navigation.navigate(" ")}>
-            <Text style={styles.buttonText1 }>Gin</Text>
-          </TouchableOpacity>
-        </View>
 
-          
-        
-      </SafeAreaView>
 
       <ScrollView>
         <View style={styles.container1}>
@@ -105,45 +85,5 @@ const styles = StyleSheet.create({
   container2: {
     width: "50%",
   },
-  titleStyleBebidas: {
-    color: "black",
-    fontFamily: "NerkoOne",
-    fontSize: 30,
-    textAlign: "left",
-    left: "3%",
-  },
-  text2: {
-    marginHorizontal: "5%",
-    fontSize: 16,
-  },
-  All: {
-    position:"absolute",
-    borderRadius:30,
-    backgroundColor:"#219EBC",
-    marginHorizontal: "6%",
-    justifyContent:"center",
-    width:"15%",
-    height:40,    
-    top:"110%",
-    alignItems: "center",
-   
-  },
-  buttonText1: {
-    color:"black"
-    
-
-  },
-  Gin: {
-    position:"absolute",
-    borderWidth: 1,
-    borderColor: "black",
-    borderRadius: 50,
-    backgroundColor:"#fff",
-    marginHorizontal: "32%",
-    justifyContent:"center",
-    height:40,    
-    top:"110%",
-    alignItems: "center",
-   
-  },
+  
 });
