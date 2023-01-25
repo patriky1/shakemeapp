@@ -20,12 +20,12 @@ const listTab = [
 
 const data =[
   {
-    id:1,
+    
     name: 'Vodka Rocks',
     status: 'Vodka',
     image: require("../cards/cardimage/Vodka_rocks.png")
   }, 
-  { id:2,
+  { 
     name: 'Vodka Absolut',
     status: 'Vodka',
     image: require("../cards/cardimage/Vodka_absolut.png")
@@ -36,17 +36,43 @@ const data =[
     image: require("../cards/cardimage/Wisky_jackdeniels.png")
   },  
   {
+    name: 'Wisky Red Label',
+    status: 'Wisky',
+    image: require("../cards/cardimage/Wisky_redlabel.png")
+  },  
+  {
+    name: 'Wisky PassPort Scotch',
+    status: 'Wisky',
+    image: require("../cards/cardimage/wisky_passport.png")
+  },
+  {
+    name: 'Wisky Oldpar',
+    status: 'Wisky',
+    image: require("../cards/cardimage/wisky_oldpar.png")
+  },
+  {
+    name: 'Wisky Black and White',
+    status: 'Wisky',
+    image: require("../cards/cardimage/Wisky_blackandwhite.png")
+  },
+  {
+    name: 'Wisky Ballatines',
+    status: 'Wisky',
+    image: require("../cards/cardimage/wisky_ballantines.png")
+  },
+  {
+    name: 'Voldka Poliakov',
+    status: 'Vodka',
+    image: require("../cards/cardimage/Vodka_poliakov.png")
+  },
+  {
     name: 'cerveja Pilsen',
     status: 'Cerveja',
     image: require("../cards/cardimage/Cerveja_pilsen.png")
   },  
+  
 
 ]
-
-
-
-
-
 
 const Bebidas = () => {
   const [status, setStatus] = useState('Todos')
@@ -73,7 +99,7 @@ const Bebidas = () => {
 const renderItem = ({item, index}) =>{
   return(
 
-      
+  <View style={styles.containerposition}>
     <View key={index} style={styles.itemContainer}>
       <View style={styles.itemStatus}>
         <Image
@@ -81,11 +107,11 @@ const renderItem = ({item, index}) =>{
         source={item.image}
         />
       </View>
-
       <View style={styles.itemBody}>
         <Text style={styles.itemName}> {item.name}</Text>
       </View>
     </View>
+  </View>
   )
 }
 
@@ -125,22 +151,37 @@ const renderItem = ({item, index}) =>{
 export default Bebidas;
 
 const styles = StyleSheet.create({
+  containerposition:{
+    flexDirection:"row",
+    flex:1,
+    width: "45%",
+    height: 280,
+    flexWrap:"wrap",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    
+
+  },
+
   container:{
     flex:1,
     paddingHorizontal:10,
-    justifyContent: "center",
-    backgroundColor:"white"
+    backgroundColor:"white",
   },
   listTab:{
     flexDirection:"row",
     alignSelf:"center",
-    marginBottom:20
+    marginBottom:20,
+    
+
+    
+   
   },
   btnTab:{
     width: Dimensions.get('window').width / 4.5,
     flexDirection:"row",
     borderEndWidth: 0.5,
-    borderColor:"#EBEBEB",
+    borderColor:"white",
     padding:10,
     justifyContent:"center",
     borderRadius:10,
@@ -155,35 +196,41 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   itemContainer:{
-    borderRadius:10,
-    paddingHorizontal: 10,
-    flex: 1,
-    borderWidth: 1,
-    flexDirection: "column",
-    width:"40%",
-    marginVertical: "1%",
     
+    paddingHorizontal: 10,
+    flex:1,
+    marginVertical: "20%",
+    borderWidth:1,
+    borderColor:"black",
+    borderRadius:10,
+    flexWrap:"wrap",  
+    flexDirection:'row',
+
   },
 
   itemBody:{
-    paddingHorizontal: 1,
     paddingVertical:10,
+    justifyContent:"flex-start",
+    flexDirection:"row",
+    flexWrap:"wrap",
+
+    
   },
 
   itemName:{
     fontWeight:"bold",
     fontSize:12,
-    textAlign:"center",    
+        
   },
 
   itemStatus:{
     paddingHorizontal: 10,
     justifyContent:"center",
-    right:12,
+    
   },
   itemImage:{
     top:"2%",
-    right:"25%",
+    right:"18%",
     width: 200,
     height: 200,
     
@@ -192,10 +239,10 @@ const styles = StyleSheet.create({
   titleStyleBebidas: {
     color: "black",
     fontFamily: "NerkoOne",
-    fontSize: 35,
-    textAlign: "left",
-    left: "3%",
+    fontSize: 35,    
   },
+
+  
   text2: {
     marginHorizontal: "5%",
     fontSize: 16,
