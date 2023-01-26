@@ -9,7 +9,7 @@ import {
     ScrollView,
   } from "react-native";
 import { useFonts } from "expo-font";
-import { styles } from "../../App";
+
 
 const Drinks = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -19,7 +19,7 @@ const Drinks = ({ navigation }) => {
     return null;
   }
   return (
-    <SafeAreaView style={styles.container1}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.rectangle}></View>
       <View style={styles.logoposition}>
         <Image source={require("../../imagens/logo.png")} />
@@ -37,3 +37,10 @@ const Drinks = ({ navigation }) => {
   );
 }
 export default Drinks;
+
+export const styles = StyleSheet.create({
+container: {
+  flex: 1,
+  backgroundColor: "white",
+},
+});

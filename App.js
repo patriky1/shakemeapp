@@ -74,13 +74,11 @@ export default function App() {
           options={{ headerShown: false }}
           component={Home}
         />
-
         <Stack.Screen
           name="cocktails"
           options={{ headerShown: false }}
           component={cocktails}
         />
-
         <Stack.Screen
           name="Bebidas"
           options={{
@@ -153,11 +151,5 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     margin: "5%",
     position: "absolute",
-  },
-
-  // TELA 3 //
-  container2: {
-    flex: 1,
-    backgroundColor: "white",
   },
 });

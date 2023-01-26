@@ -28,6 +28,11 @@ const listTab = [
 
 const data = [
   {
+    name: "cerveja Pilsen",
+    status: "Cerveja",
+    image: require("../cards/cardimage/Cerveja_pilsen.png"),
+  },
+  {
     name: "Vodka Rocks",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_rocks.png"),
@@ -73,10 +78,74 @@ const data = [
     image: require("../cards/cardimage/Vodka_poliakov.png"),
   },
   {
-    name: "cerveja Pilsen",
-    status: "Cerveja",
-    image: require("../cards/cardimage/Cerveja_pilsen.png"),
+    name: "Voldka Skyy",
+    status: "Vodka",
+    image: require("../cards/cardimage/Vodka_sky.png"),
+  
   },
+  {
+    name: "Voldka Absolut Elyx",
+    status: "Vodka",
+    image: require("../cards/cardimage/Vodka_Absolut_Elyx.png"),
+  
+  },
+  {
+    name: "Voldka Beluga",
+    status: "Vodka",
+    image: require("../cards/cardimage/vodka_beluga.png"),
+  },
+  {
+    name: "Voldka Ketel One",
+    status: "Vodka",
+    image: require("../cards/cardimage/vodka_ketel_one.png"),
+  },
+  {
+    name: "Voldka Stolychnaya Elit",
+    status: "Vodka",
+    image: require("../cards/cardimage/Vodka_Stolychnaya_Elit.png"),
+  },
+  {
+    name: "Voldka Suntori Haku",
+    status: "Vodka",
+    image: require("../cards/cardimage/Vodka_Suntori_Haku.png"),
+  },
+  {
+    name: "Whisky Makers Mark ",
+    status: "Wisky",
+    image: require("../cards/cardimage/Whisky_Makers_Mark.png"),
+  },
+  {
+    name: "Whisky Singleton Of Dufftown",
+    status: "Wisky",
+    image: require("../cards/cardimage/Whisky_Singleton_Of_Dufftown.png"),
+  },
+  {
+    name: "Whisky Jack Daniel's Gentleman Jack",
+    status: "Wisky",
+    image: require("../cards/cardimage/Wisky_Jack_Daniels_Gentleman_Jack.png"),
+  },
+  {
+    name: "Whisky Chivas Regal",
+    status: "Wisky",
+    image: require("../cards/cardimage/Whisky_Chivas_Regal.png"),
+  },
+  {
+    name: "Whisky Talisker Single Malt",
+    status: "Wisky",
+    image: require("../cards/cardimage/wisky_talisker.png"),
+  },
+  {
+    name: "Whisky Chita Suntory",
+    status: "Wisky",
+    image: require("../cards/cardimage/Whisky_Chita_Suntory.png"),
+  },
+
+
+
+
+
+
+
 ];
 
 const Bebidas = () => {
