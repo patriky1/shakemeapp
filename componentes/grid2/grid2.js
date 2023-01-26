@@ -24,6 +24,9 @@ const listTab = [
   {
     status: "Wisky",
   },
+  {
+    status: "Agua Tônica",
+  },
 ];
 
 const data = [
@@ -139,13 +142,6 @@ const data = [
     status: "Wisky",
     image: require("../cards/cardimage/Whisky_Chita_Suntory.png"),
   },
-
-
-
-
-
-
-
 ];
 
 const Bebidas = () => {
@@ -245,22 +241,27 @@ const styles = StyleSheet.create({
   listTab: {
     flexDirection: "row",
     alignSelf: "center",
-    marginBottom: 20,
+    marginBottom: 15,
   },
   btnTab: {
-    width: Dimensions.get("window").width / 4.5,
+    width: Dimensions.get("window").width / 5,
     flexDirection: "row",
-    borderEndWidth: 0.5,
+    borderEndWidth: 0.2,
     borderColor: "white",
-    padding: 10,
+    padding: 5,
     justifyContent: "center",
     borderRadius: 10,
   },
   textTab: {
-    fontSize: 16,
+    fontSize: 13,
+    textAlign:"center",
+    height:30,
+    width:80,
   },
   btnTabActive: {
     backgroundColor: "#219EBC",
+    width:80,
+    height:30,
   },
   textTabActive: {
     color: "#fff",
@@ -284,8 +285,7 @@ const styles = StyleSheet.create({
   },
   itemImage: {
     top: "5%",
-    right: "18%",
-    width: 200,
+    width: 130,
     height: 200,
   },
 
