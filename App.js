@@ -20,7 +20,7 @@ import Inicio from "./imagens/imagensSVG/inicio.svg";
 import Overlay from "./imagens/imagensSVG/overlay.svg";
 import LogoApp from "./componentes/grid2/imagens/logoapp.svg";
 
-// TELA 1 //
+// TELA HOME //
 function Home({ navigation }) {
   const [loaded] = useFonts({
     EBGaramond: require("./assets/fonts/EBGaramond-Regular.ttf"),

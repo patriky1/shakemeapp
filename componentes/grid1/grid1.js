@@ -15,14 +15,10 @@ import {
   Circle as SvgCircle,
   Text as SvgText,
   TextPath as SvgTextPath,
-  TSpan as SvgTSpan
-} from 'react-native-svg';
-
-
-
+  TSpan as SvgTSpan,
+} from "react-native-svg";
 
 const data = [
-
   {
     name: "Limao Sisciliano",
     image: require("../grid1/imagens/Limao_Siciliano.png"),
@@ -83,129 +79,124 @@ const data = [
     name: "Uva Tinta",
     image: require("../grid1/imagens/Uva_tinta.png"),
   },
-]
-
+];
 
 const Drinks = ({ navigation }) => {
-const [datalist] = useState(data);
-const [loaded] = useFonts({
-  EBGaramond: require("../../assets/fonts/EBGaramond-Regular.ttf"),
-});
-if (!loaded) {
-  return null;
-}
+  const [datalist] = useState(data);
+  const [loaded] = useFonts({
+    EBGaramond: require("../../assets/fonts/EBGaramond-Regular.ttf"),
+  });
+  if (!loaded) {
+    return null;
+  }
 
-const SvgComponent = (props) => (
-  <View style={{ flex: 1 }}>
-    <Svg height="300" width="300" viewBox="79 81 260 260" {...props}>
-      <SvgG id="circle">
-        <SvgCircle
-          r={55}
-          x={144}
-          y={150}
-          fill="none"
-          stroke="none"
-          strokeWidth={0}
-          transform="rotate(-150)"
-        />
-      </SvgG>
-        <SvgText fill="#000" fontSize="14" fontFamily="EBGaramond" >
+  const SvgComponent = (props) => (
+    <View style={{ flex: 1 }}>
+      <Svg height="300" width="300" viewBox="79 81 260 260" {...props}>
+        <SvgG id="circle">
+          <SvgCircle
+            r={55}
+            x={144}
+            y={150}
+            fill="none"
+            stroke="none"
+            strokeWidth={0}
+            transform="rotate(-150)"
+          />
+        </SvgG>
+        <SvgText fill="#000" fontSize="14" fontFamily="EBGaramond">
           <SvgTextPath href="#circle">
             <SvgTSpan style={styles.svgtext} dy={0}>
               {props.text}
             </SvgTSpan>
           </SvgTextPath>
         </SvgText>
-
-    </Svg>
-  </View>
-);
-
-return (
-  <SafeAreaView style={styles.container}>
-    <View style={styles.rectangle}>
-    <View style={styles.circle}>
-    <View style={styles.circle1}>
-      <View>
-    <SvgComponent fontFamily="EBGaramond" text="Lemon Drop Martini"/>
+      </Svg>
     </View>
-      <TouchableOpacity style={styles.textproduct}>
-        <Text style={styles.textproduct1}>R$</Text>
-      </TouchableOpacity>
-      <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate("")}>
-            
-            <Image
-            style={styles.iconcompra}
-             source={require("./imagens/icon_comprar.png")}/>
-           
-          </TouchableOpacity>
+  );
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.rectangle}>
+        <View style={styles.circle}>
+          <View style={styles.circle1}>
+            <View>
+              <SvgComponent fontFamily="EBGaramond" text="Lemon Drop Martini" />
+            </View>
+            <TouchableOpacity style={styles.textproduct}>
+              <Text style={styles.textproduct1}>R$</Text>
+            </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity onPress={() => navigation.navigate("")}>
+                <Image
+                  style={styles.iconcompra}
+                  source={require("./imagens/icon_comprar.png")}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-    </View>
-    </View>
-    </View>
-    <View style={styles.logoposition}>
-      <Image source={require("../../imagens/logo.png")} />
-    </View>
-    <View style={styles.textposition}>
-    <Text style={styles.textingredients}> Escolha os Igredientes.</Text>
-    </View>
-    <View>
-    <ScrollView horizontal style={styles.ScrollViewtext}>
-    {datalist.map((item) => (
-    <View style={styles.rectangle2}>
-       <Image style={styles.itemImage} source={item.image} />
-       <Text style={styles.itemName}> {item.name}</Text>
-    </View>
-    ))}
-    </ScrollView>
-    </View>
-    <View style={styles.retange3}>
-      
-    </View>
-  </SafeAreaView>
-);
-}
+      </View>
+      <View style={styles.logoposition}>
+        <Image source={require("../../imagens/logo.png")} />
+      </View>
+      <View style={styles.textposition}>
+        <Text style={styles.textingredients}> Escolha os Igredientes.</Text>
+      </View>
+      <View>
+        <ScrollView horizontal style={styles.ScrollViewtext}>
+          {datalist.map((item) => (
+            <View style={styles.rectangle2}>
+              <Image style={styles.itemImage} source={item.image} />
+              <Text style={styles.itemName}> {item.name}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      </View>
+      <View style={styles.retange3}></View>
+    </SafeAreaView>
+  );
+};
 export default Drinks;
 
 export const styles = StyleSheet.create({
-container: {
-flex: 1,
-backgroundColor: "#D6E3E9",
-},
-rectangle:{
-  backgroundColor: "#219EBC",
-  width:"100%",
-  height:"50%",
-  borderRadius:30
-},
-logoposition:{
-  alignItems: "flex-start",
-  justifyContent: "center",
-  margin: "5%",
-  position: "absolute",
-},
-circle: {
-  position:"absolute",
-  backgroundColor:"#D6E3E9",
-  height: 160,
-  width: 162,
-  borderRadius: 100,
-  top:"78%",
-  left:"2%",
-},
+  container: {
+    flex: 1,
+    backgroundColor: "#D6E3E9",
+  },
+  rectangle: {
+    backgroundColor: "#219EBC",
+    width: "100%",
+    height: "50%",
+    borderRadius: 30,
+  },
+  logoposition: {
+    alignItems: "flex-start",
+    justifyContent: "center",
+    margin: "5%",
+    position: "absolute",
+  },
+  circle: {
+    position: "absolute",
+    backgroundColor: "#D6E3E9",
+    height: 160,
+    width: 162,
+    borderRadius: 100,
+    top: "78%",
+    left: "2%",
+  },
   circle1: {
-    position:"absolute",
-    backgroundColor:"white",
+    position: "absolute",
+    backgroundColor: "white",
     height: 150,
     width: 150,
     borderRadius: 100,
-    left:"3.5%",
-    top:"5%"
+    left: "3.5%",
+    top: "5%",
   },
   buttonContainer: {
     marginTop: "70%",
-    marginLeft:"37%",
+    marginLeft: "37%",
     borderRadius: 35,
     width: 35,
     height: 35,
@@ -213,65 +204,60 @@ circle: {
     justifyContent: "center",
     alignItems: "center",
   },
-  iconcompra:{
-    width:20,
-    height:20,
+  iconcompra: {
+    width: 20,
+    height: 20,
   },
-  textproduct:{
-    position:"absolute",
-    justifyContent:"center",
-    left:"20%",
-    top:"40%"
+  textproduct: {
+    position: "absolute",
+    justifyContent: "center",
+    left: "20%",
+    top: "40%",
   },
-  textproduct1:{
-    fontSize:18,
-    fontWeight:"bold"
+  textproduct1: {
+    fontSize: 18,
+    fontWeight: "bold",
   },
-  textposition:{
-    position:"absolute",
-    top:"58.5%"
-    
+  textposition: {
+    position: "absolute",
+    top: "58.5%",
   },
-  textingredients:{
-    margin:"3%",
-    paddingTop:10,
-    fontSize:16,
-    fontFamily:"EBGaramond",
-    
+  textingredients: {
+    margin: "3%",
+    paddingTop: 10,
+    fontSize: 16,
+    fontFamily: "EBGaramond",
   },
   rectangle2: {
-    backgroundColor:"white",
+    backgroundColor: "white",
     height: 100,
     width: 70,
     borderRadius: 30,
-    marginTop:10,
-    margin:5
-    
+    marginTop: 10,
+    margin: 5,
   },
-  ScrollViewtext:{
-    marginTop:"25%",
-   },
+  ScrollViewtext: {
+    marginTop: "25%",
+  },
 
   itemName: {
-    fontFamily:"EBGaramond",
+    fontFamily: "EBGaramond",
     fontSize: 12,
-    textAlign:"center",
-    bottom:"7%"
+    textAlign: "center",
+    bottom: "7%",
   },
-  itemImage:{
-    width:70,
-    height:70
+  itemImage: {
+    width: 70,
+    height: 70,
   },
-  svgtext:{
-    fontFamily:"EBGaramond",
+  svgtext: {
+    fontFamily: "EBGaramond",
   },
-  retange3:{
-    margin:20,
-    borderRadius:20,
-    width:"auto",
-    height:120,
-    backgroundColor:"white"
+  retange3: {
+    margin: 20,
+    borderRadius: 20,
+    width: "auto",
+    height: 120,
+    backgroundColor: "white",
   },
-
-
 });
