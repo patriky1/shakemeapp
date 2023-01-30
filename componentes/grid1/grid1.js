@@ -18,45 +18,14 @@ import {
   TSpan as SvgTSpan
 } from 'react-native-svg';
 
-const SvgComponent = (props) => (
-  <View style={{ flex: 1 }}>
-    <Svg height="300" width="300" viewBox="75 80 300 300" {...props}>
-      <SvgG id="circle">
-        <SvgCircle
-          r={55}
-          x={150}
-          y={150}
-          fill="none"
-          stroke="none"
-          strokeWidth={0}
-          transform="rotate(-140)"
-        />
-      </SvgG>
-     
-
-        <SvgText fill="#000" fontSize="14">
-          <SvgTextPath href="#circle">
-            <SvgTSpan dy={0}>
-              {props.text}
-            </SvgTSpan>
-          </SvgTextPath>
-        </SvgText>
-
-    </Svg>
-  </View>
-);
 
 
 
 const data = [
 
   {
-    name: "Limao Siciliano",
+    name: "Limao Sisciliano",
     image: require("../grid1/imagens/Limao_Siciliano.png"),
-  },
-  {
-    name: "Limao taiti",
-    image: require("../grid1/imagens/Limao_taiti.png"),
   },
   {
     name: "Abacaxi",
@@ -111,12 +80,9 @@ const data = [
     image: require("../grid1/imagens/Pitaya.png"),
   },
   {
-    name: "Uva tinta",
+    name: "Uva Tinta",
     image: require("../grid1/imagens/Uva_tinta.png"),
   },
-
-
-
 ]
 
 
@@ -128,28 +94,63 @@ const [loaded] = useFonts({
 if (!loaded) {
   return null;
 }
+
+const SvgComponent = (props) => (
+  <View style={{ flex: 1 }}>
+    <Svg height="300" width="300" viewBox="79 81 260 260" {...props}>
+      <SvgG id="circle">
+        <SvgCircle
+          r={55}
+          x={144}
+          y={150}
+          fill="none"
+          stroke="none"
+          strokeWidth={0}
+          transform="rotate(-150)"
+        />
+      </SvgG>
+        <SvgText fill="#000" fontSize="14" fontFamily="EBGaramond" >
+          <SvgTextPath href="#circle">
+            <SvgTSpan style={styles.svgtext} dy={0}>
+              {props.text}
+            </SvgTSpan>
+          </SvgTextPath>
+        </SvgText>
+
+    </Svg>
+  </View>
+);
+
 return (
   <SafeAreaView style={styles.container}>
     <View style={styles.rectangle}>
     <View style={styles.circle}>
     <View style={styles.circle1}>
-      <View style={styles.svgposition}>
-    <SvgComponent text="Limão sisciliano"/>
+      <View>
+    <SvgComponent fontFamily="EBGaramond" text="Lemon Drop Martini"/>
     </View>
       <TouchableOpacity style={styles.textproduct}>
-
-       
-        <Text> R$</Text>
+        <Text style={styles.textproduct1}>R$</Text>
       </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate("")}>
+            
+            <Image
+            style={styles.iconcompra}
+             source={require("./imagens/icon_comprar.png")}/>
+           
+          </TouchableOpacity>
+        </View>
     </View>
     </View>
     </View>
     <View style={styles.logoposition}>
       <Image source={require("../../imagens/logo.png")} />
     </View>
-
+    <View style={styles.textposition}>
     <Text style={styles.textingredients}> Escolha os Igredientes.</Text>
-    <View >
+    </View>
+    <View>
     <ScrollView horizontal style={styles.ScrollViewtext}>
     {datalist.map((item) => (
     <View style={styles.rectangle2}>
@@ -158,6 +159,9 @@ return (
     </View>
     ))}
     </ScrollView>
+    </View>
+    <View style={styles.retange3}>
+      
     </View>
   </SafeAreaView>
 );
@@ -173,7 +177,7 @@ rectangle:{
   backgroundColor: "#219EBC",
   width:"100%",
   height:"50%",
-  zIndex:0
+  borderRadius:30
 },
 logoposition:{
   alignItems: "flex-start",
@@ -199,39 +203,75 @@ circle: {
     left:"3.5%",
     top:"5%"
   },
+  buttonContainer: {
+    marginTop: "70%",
+    marginLeft:"37%",
+    borderRadius: 35,
+    width: 35,
+    height: 35,
+    backgroundColor: "black",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  iconcompra:{
+    width:20,
+    height:20,
+  },
   textproduct:{
     position:"absolute",
     justifyContent:"center",
-    left:"30%",
-    top:"60%"
+    left:"20%",
+    top:"40%"
+  },
+  textproduct1:{
+    fontSize:18,
+    fontWeight:"bold"
+  },
+  textposition:{
+    position:"absolute",
+    top:"58.5%"
+    
   },
   textingredients:{
-    position:"absolute",
-    top:"62%",
-    margin:"2%",
+    margin:"3%",
+    paddingTop:10,
     fontSize:16,
-    fontFamily:"EBGaramond"
+    fontFamily:"EBGaramond",
+    
   },
   rectangle2: {
     backgroundColor:"white",
     height: 100,
     width: 70,
     borderRadius: 30,
-    marginTop:120,
-    left:"1%",
+    marginTop:10,
     margin:5
     
   },
+  ScrollViewtext:{
+    marginTop:"25%",
+   },
+
   itemName: {
     fontFamily:"EBGaramond",
     fontSize: 12,
     textAlign:"center",
-    bottom:"5%"
+    bottom:"7%"
   },
   itemImage:{
     width:70,
     height:70
-  }
+  },
+  svgtext:{
+    fontFamily:"EBGaramond",
+  },
+  retange3:{
+    margin:20,
+    borderRadius:20,
+    width:"auto",
+    height:120,
+    backgroundColor:"white"
+  },
 
 
 });

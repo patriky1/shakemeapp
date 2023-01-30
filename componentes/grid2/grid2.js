@@ -76,39 +76,39 @@ const data = [
     image: require("../cards/cardimage/wisky_ballantines.png"),
   },
   {
-    name: "Voldka Poliakov",
+    name: "Vodka Poliakov",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_poliakov.png"),
   },
   {
-    name: "Voldka Skyy",
+    name: "Vodka Skyy",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_sky.png"),
   
   },
   {
-    name: "Voldka Absolut Elyx",
+    name: "Vodka Absolut Elyx",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_Absolut_Elyx.png"),
   
   },
   {
-    name: "Voldka Beluga",
+    name: "Vodka Beluga",
     status: "Vodka",
     image: require("../cards/cardimage/vodka_beluga.png"),
   },
   {
-    name: "Voldka Ketel One",
+    name: "Vodka Ketel One",
     status: "Vodka",
     image: require("../cards/cardimage/vodka_ketel_one.png"),
   },
   {
-    name: "Voldka Stolychnaya Elit",
+    name: "Vodka Stolychnaya Elit",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_Stolychnaya_Elit.png"),
   },
   {
-    name: "Voldka Suntori Haku",
+    name: "Vodka Suntori Haku",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_Suntori_Haku.png"),
   },
@@ -244,9 +244,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   btnTab: {
-    width: Dimensions.get("window").width / 5,
+    width: Dimensions.get("window").width / 5.5,
     flexDirection: "row",
-    borderEndWidth: 0.2,
+    borderEndWidth: 2,
     borderColor: "white",
     padding: 5,
     justifyContent: "center",
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign:"center",
     height:30,
-    width:80,
+    width:90,
   },
   btnTabActive: {
     backgroundColor: "#219EBC",
@@ -268,15 +268,17 @@ const styles = StyleSheet.create({
   },
 
   itemBody: {
-    paddingVertical: 10,
+    marginTop:"20%", 
     justifyContent: "flex-start",
     flexDirection: "row",
     flexWrap: "wrap",
+    
   },
 
   itemName: {
     fontWeight: "bold",
     fontSize: 12,
+    
   },
 
   itemStatus: {
@@ -284,7 +286,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   itemImage: {
-    top: "5%",
+    top: "8%",
     width: 130,
     height: 200,
   },

@@ -96,7 +96,7 @@ export default function App() {
 export const styles = StyleSheet.create({
   overlay: {
     position: "absolute",
-    bottom: "20%",
+    bottom: "15%",
     display: "flex",
     flexDirection: "row",
     width: "100%",
