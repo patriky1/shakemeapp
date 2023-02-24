@@ -146,7 +146,7 @@ const Drinks = ({ navigation }) => {
       <View>
         <ScrollView horizontal style={styles.ScrollViewtext}>
           {datalist.map((item) => (
-            <View style={styles.rectangle2}>
+            <View style={styles.rectangle2} key={item.image} >
               <Image style={styles.itemImage} source={item.image} />
               <Text style={styles.itemName}> {item.name}</Text>
             </View>

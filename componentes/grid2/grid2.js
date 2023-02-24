@@ -12,132 +12,132 @@ import {
 import { useFonts } from "expo-font";
 
 const listTab = [
-  {
+  { id:1,
     status: "Todos",
   },
-  {
+  { id:2,
     status: "Vodka",
   },
-  {
+  { id:3,
     status: "Cerveja",
   },
-  {
+  { id:4,
     status: "Wisky",
   },
-  {
+  { id:5,
     status: "Agua Tônica",
   },
 ];
 
 const data = [
-  {
+  { id:'1',
     name: "cerveja Pilsen",
     status: "Cerveja",
     image: require("../cards/cardimage/Cerveja_pilsen.png"),
   },
-  {
+  { id:'2',
     name: "Vodka Rocks",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_rocks.png"),
   },
-  {
+  { id:'3',
     name: "Vodka Absolut",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_absolut.png"),
   },
-  {
+  { id:'4',
     name: "Wisky Jack Deniels",
     status: "Wisky",
     image: require("../cards/cardimage/Wisky_jackdeniels.png"),
   },
-  {
+  { id:'5',
     name: "Wisky Red Label",
     status: "Wisky",
     image: require("../cards/cardimage/Wisky_redlabel.png"),
   },
-  {
+  { id:'6',
     name: "Wisky PassPort Scotch",
     status: "Wisky",
     image: require("../cards/cardimage/wisky_passport.png"),
   },
-  {
+  { id:'7',
     name: "Wisky Oldpar",
     status: "Wisky",
     image: require("../cards/cardimage/wisky_oldpar.png"),
   },
-  {
+  { id:'8',
     name: "Wisky Black and White",
     status: "Wisky",
     image: require("../cards/cardimage/Wisky_blackandwhite.png"),
   },
-  {
+  { id:'9',
     name: "Wisky Ballatines",
     status: "Wisky",
     image: require("../cards/cardimage/wisky_ballantines.png"),
   },
-  {
+  { id:'10',
     name: "Vodka Poliakov",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_poliakov.png"),
   },
-  {
+  { id:'11',
     name: "Vodka Skyy",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_sky.png"),
   
   },
-  {
+  { id:'12',
     name: "Vodka Absolut Elyx",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_Absolut_Elyx.png"),
   
   },
-  {
+  { id:'13',
     name: "Vodka Beluga",
     status: "Vodka",
     image: require("../cards/cardimage/vodka_beluga.png"),
   },
-  {
+  { id:'14',
     name: "Vodka Ketel One",
     status: "Vodka",
     image: require("../cards/cardimage/vodka_ketel_one.png"),
   },
-  {
+  { id:'15',
     name: "Vodka Stolychnaya Elit",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_Stolychnaya_Elit.png"),
   },
-  {
+  { id:'16',
     name: "Vodka Suntori Haku",
     status: "Vodka",
     image: require("../cards/cardimage/Vodka_Suntori_Haku.png"),
   },
-  {
+  { id:'17', 
     name: "Whisky Makers Mark ",
     status: "Wisky",
     image: require("../cards/cardimage/Whisky_Makers_Mark.png"),
   },
-  {
+  { id:'18',
     name: "Whisky Singleton Of Dufftown",
     status: "Wisky",
     image: require("../cards/cardimage/Whisky_Singleton_Of_Dufftown.png"),
   },
-  {
+  { id:'19',
     name: "Whisky Jack Daniel's Gentleman Jack",
     status: "Wisky",
     image: require("../cards/cardimage/Wisky_Jack_Daniels_Gentleman_Jack.png"),
   },
-  {
+  { id:'20',
     name: "Whisky Chivas Regal",
     status: "Wisky",
     image: require("../cards/cardimage/Whisky_Chivas_Regal.png"),
   },
-  {
+  { id:'21',
     name: "Whisky Talisker Single Malt",
     status: "Wisky",
     image: require("../cards/cardimage/wisky_talisker.png"),
   },
-  {
+  { id:'22',
     name: "Whisky Chita Suntory",
     status: "Wisky",
     image: require("../cards/cardimage/Whisky_Chita_Suntory.png"),
@@ -156,7 +156,7 @@ const Bebidas = () => {
 
   const setStatusFilter = (status) => {
     if (status !== "Todos") {
-      setDatalist([...data.filter((e) => e.status === status)]);
+      setDatalist([...datalist.filter((e) => e.status === status)]);
     } else {
       setDatalist(data);
     }
@@ -173,6 +173,7 @@ const Bebidas = () => {
       <View style={styles.listTab}>
         {listTab.map((e) => (
           <TouchableOpacity
+            key={e.id}
             horizontal={true}
             style={[styles.btnTab, status === e.status && styles.btnTabActive]}
             onPress={() => setStatusFilter(e.status)}
@@ -180,8 +181,7 @@ const Bebidas = () => {
             <Text
               style={[
                 styles.textTab,
-                status === e.status && styles.textTabActive,
-              ]}
+                status === e.status && styles.textTabActive]}
             >
               {e.status}
             </Text>
@@ -190,21 +190,22 @@ const Bebidas = () => {
       </View>
 
       <ScrollView>
-        <View style={styles.list}>
-          {datalist.map((item) => (
-            <View style={styles.containerposition}>
-              <View key={item.name} style={styles.itemContainer}>
-                <View style={styles.itemStatus}>
-                  <Image style={styles.itemImage} source={item.image} />
-                </View>
-                <View style={styles.itemBody}>
-                  <Text style={styles.itemName}> {item.name}</Text>
-                </View>
-              </View>
-            </View>
-          ))}
+  <View style={styles.list}>
+    {datalist.map((item, index) => (
+      <View style={styles.containerposition} key={item.image}>
+        <View style={styles.itemContainer}>
+          <View style={styles.itemStatus}>
+            <Image style={styles.itemImage} source={item.image} />
+          </View>
+          <View style={styles.itemBody}>
+            <Text style={styles.itemName}> {item.name}</Text>
+          </View>
         </View>
-      </ScrollView>
+      </View>
+    ))}
+  </View>
+</ScrollView>
+
     </SafeAreaView>
   );
 };
